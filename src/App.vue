@@ -1,20 +1,13 @@
 <template>
   <AppProvider>
-    <n-space m-50>
-      <n-button>Default</n-button>
-      <n-button type="tertiary"> Tertiary </n-button>
-      <n-button type="primary"> Primary </n-button>
-      <n-button type="info"> Info </n-button>
-      <n-button type="success"> Success </n-button>
-      <n-button type="warning"> Warning </n-button>
-      <n-button type="error"> Error </n-button>
-    </n-space>
+    <Layout />
   </AppProvider>
 </template>
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import AppProvider from '@/components/AppProvider/index.vue'
+import Layout from '@/layout/index.vue'
 
 onMounted(() => {
   window.$loadingBar.start()
