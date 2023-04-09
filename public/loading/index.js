@@ -8,7 +8,6 @@ function addThemeColorCssVars() {
   const themeColor = window.localStorage.getItem(key) || defaultColor
   const cssVars = `--primary-color: ${themeColor}`
   document.documentElement.style.cssText = cssVars
-  console.log('loading')
 }
 
 addThemeColorCssVars()

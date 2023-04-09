@@ -1,10 +1,10 @@
+<template>
+    <n-icon size="18" mr-8px>
+        <HomeFilled />
+    </n-icon>
+    <span>SQL编辑器</span>
+</template>
+
 <script lang="ts" setup>
 import { HomeFilled } from '@vicons/material'
 </script>
-
-<template>
-    <n-icon size="18">
-        <HomeFilled />
-    </n-icon>
-    <span>工作台</span>
-</template>

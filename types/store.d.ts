@@ -46,3 +46,10 @@ declare namespace Theme {
         otherColor: OtherColor
     }
 }
+
+declare namespace Editor {
+    interface Setting {
+        value: string,
+        theme: string,
+    }
+}

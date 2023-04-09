@@ -1,7 +1,9 @@
+
 import { darkTheme } from 'naive-ui'
 import type { BuiltInGlobalTheme } from 'naive-ui/es/themes/interface'
 import { defineStore } from 'pinia'
 import { initThemeSettings } from './helpers'
+import piniaPersistConfig from '../../piniaPersist'
 
 type ThemeState = Theme.Setting
 
@@ -37,4 +39,5 @@ export const useThemeStore = defineStore('theme-store', {
             this.primaryColor = color
         },
     },
+    persist: piniaPersistConfig('theme')
 })

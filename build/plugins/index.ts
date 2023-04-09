@@ -3,13 +3,14 @@ import vue from '@vitejs/plugin-vue'
 import { unocss } from './unocss'
 import { visualizer } from 'rollup-plugin-visualizer'
 import viteCompression from 'vite-plugin-compression'
+import monacoEditorPlugin from 'vite-plugin-monaco-editor'
 
 import unplugins from './unplugin'
 import { setupHtmlPlugin } from './html'
 import { setupMockPlugin } from './mock'
 
 export function setupVitePlugins(viteEnv: ViteEnv, isBuild: boolean): PluginOption[] {
-  const plugins = [vue(), ...unplugins, unocss(), setupHtmlPlugin(viteEnv)]
+  const plugins = [vue(), ...unplugins, unocss(), setupHtmlPlugin(viteEnv), monacoEditorPlugin({})]
   if (viteEnv.VITE_USE_MOCK)
     plugins.push(setupMockPlugin(isBuild))
 

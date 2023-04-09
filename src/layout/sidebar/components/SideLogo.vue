@@ -1,11 +1,3 @@
-<script setup lang="ts">
-import { useThemeStore } from '@/store'
-import { WorkspacesRound } from '@vicons/material'
-const title = import.meta.env.VITE_APP_TITLE
-
-const themeStore = useThemeStore()
-</script>
-
 <template>
   <a h-60 f-c-c href="#/">
     <WorkspacesRound w-1em h-1em text-36 color-primary />
@@ -14,3 +6,11 @@ const themeStore = useThemeStore()
     </h2>
   </a>
 </template>
+
+<script setup lang="ts">
+import { useThemeStore } from '@/store'
+import { WorkspacesRound } from '@vicons/material'
+const title = import.meta.env.VITE_APP_TITLE
+
+const themeStore = useThemeStore()
+</script>

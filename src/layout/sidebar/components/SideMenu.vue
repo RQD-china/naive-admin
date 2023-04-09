@@ -1,34 +1,3 @@
-<script setup lang="ts">
-import type { MenuOption } from 'naive-ui'
-import { renderNIcon } from '@/utils'
-import { HomeFilled } from "@vicons/material";
-
-const menuOptions: MenuOption[] = [
-  {
-    label: () =>
-      h(
-        'a',
-        {
-          href: '#/',
-          rel: 'noopenner noreferrer'
-        },
-        '工作台'
-      ),
-    key: 'home',
-    icon: renderNIcon(HomeFilled)
-  },
-  {
-    key: 'divider-1',
-    type: 'divider',
-    props: {
-      style: {
-        marginLeft: '32px'
-      }
-    }
-  }
-]
-</script>
-
 <template>
   <n-menu ref="menu" class="side-menu" accordion :indent="18" :collapsed-icon-size="22" :collapsed-width="64"
     :options="menuOptions" value="home" />
@@ -51,3 +20,34 @@ const menuOptions: MenuOption[] = [
   }
 }
 </style>
+
+<script setup lang="ts">
+import type { MenuOption } from 'naive-ui'
+import { renderNIcon } from '@/utils'
+import { HomeFilled } from "@vicons/material";
+
+const menuOptions: MenuOption[] = [
+  {
+    label: () =>
+      h(
+        'a',
+        {
+          href: '#/',
+          rel: 'noopenner noreferrer'
+        },
+        'SQL编辑器'
+      ),
+    key: 'home',
+    icon: renderNIcon(HomeFilled)
+  },
+  {
+    key: 'divider-1',
+    type: 'divider',
+    props: {
+      style: {
+        marginLeft: '32px'
+      }
+    }
+  }
+]
+</script>

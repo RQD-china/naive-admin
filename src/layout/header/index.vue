@@ -1,12 +1,3 @@
-<script setup lang="ts">
-// import MenuCollapse from './components/MenuCollapse.vue'
-import BreadCrumb from "./components/BreadCrumb.vue";
-import FullScreen from './components/FullScreen.vue'
-// import UserAvatar from './components/UserAvatar.vue'
-import GithubSite from './components/GithubSite.vue'
-import ThemeMode from './components/ThemeMode.vue'
-</script>
-
 <template>
   <div flex items-center>
     <BreadCrumb />
@@ -15,6 +6,12 @@ import ThemeMode from './components/ThemeMode.vue'
     <ThemeMode />
     <GithubSite />
     <FullScreen />
-    <!-- <UserAvatar /> -->
   </div>
 </template>
+
+<script setup lang="ts">
+import BreadCrumb from "./components/BreadCrumb.vue";
+import FullScreen from './components/FullScreen.vue'
+import GithubSite from './components/GithubSite.vue'
+import ThemeMode from './components/ThemeMode.vue'
+</script>
