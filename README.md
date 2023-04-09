@@ -4,7 +4,6 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/RQD-china/naive-admin/actions"><img allt="checks" src="https://badgen.net/github/checks/RQD-china/naive-admin"/></a>
   <a href="https://github.com/RQD-china/naive-admin"><img allt="stars" src="https://badgen.net/github/stars/RQD-china/naive-admin"/></a>
   <a href="https://github.com/RQD-china/naive-admin"><img allt="forks" src="https://badgen.net/github/forks/RQD-china/naive-admin"/></a>
   <a href="./LICENSE"><img allt="MIT License" src="https://badgen.net/github/license/RQD-china/naive-admin"/></a>
