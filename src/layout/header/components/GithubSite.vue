@@ -7,6 +7,6 @@
 <script setup lang="ts">
 import { Github } from "@vicons/fa";
 function handleLinkClick() {
-  window.open('https://github.com/RQD-china/naive-admin')
+  window.open('https://github.com/RQD-china/naive-editor')
 }
 </script>
