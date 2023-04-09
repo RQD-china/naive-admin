@@ -1,37 +1,41 @@
+import type { ConfigEnv } from 'vite'
 import { defineConfig, loadEnv } from 'vite'
-import path from 'path'
 
-import { wrapperEnv, createProxy  } from './build/utils'
-import { createVitePlugins } from './build/plugin'
+import { convertEnv, getRootPath, getSrcPath } from './build/utils'
+import { createViteProxy, viteDefine } from './build/config'
+import { setupVitePlugins } from './build/plugins'
 
-export default defineConfig(({ command, mode }) => {
-  const isBuild = command === 'build'
-  const env = loadEnv(mode, process.cwd())
-  const viteEnv = wrapperEnv(env)
-  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY } = viteEnv
-  
+export default defineConfig((configEnv: ConfigEnv) => {
+  const srcPath = getSrcPath()
+  const rootPath = getRootPath()
+  const isBuild = configEnv.command === 'build'
+
+  const viteEnv = convertEnv(loadEnv(configEnv.mode, process.cwd()))
+
+  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_USE_PROXY, VITE_PROXY_TYPE } = viteEnv
   return {
-    plugins: createVitePlugins(viteEnv, isBuild),
-    base: VITE_PUBLIC_PATH || '/',
+    base: VITE_PUBLIC_PATH,
     resolve: {
-      // 设置别名
       alias: {
-        vue: 'vue/dist/vue.esm-bundler.js',
-        '@': path.resolve(__dirname, 'src'),
+        '~': rootPath,
+        '@': srcPath,
       },
     },
-    css: {
-      preprocessorOptions: {
-        //define global scss variable
-        scss: {
-          additionalData: `@import '@/styles/variables.scss';`,
-        },
-      },
-    },
+    define: viteDefine,
+    plugins: setupVitePlugins(viteEnv, isBuild),
     server: {
-      host: '0.0.0.0',  // 默认为'127.0.0.1'，如果将此设置为 `0.0.0.0` 或者 `true` 将监听所有地址，包括局域网和公网地址
-      port: VITE_PORT,  // 端口
-      proxy: createProxy(VITE_PROXY), // 代理
-    }
+      host: '0.0.0.0',
+      port: VITE_PORT,
+      open: false,
+      proxy: createViteProxy(VITE_USE_PROXY, VITE_PROXY_TYPE as ProxyType),
+    },
+    build: {
+      reportCompressedSize: false,
+      sourcemap: false,
+      chunkSizeWarningLimit: 1024, // chunk 大小警告的限制（单位kb）
+      commonjsOptions: {
+        ignoreTryCatch: false,
+      },
+    },
   }
 })

@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider :theme-overrides="themeOverrides">
+  <n-config-provider :theme-overrides="themeOverrides" :theme="themeMode">
     <n-loading-bar-provider>
       <n-dialog-provider>
         <n-notification-provider>
@@ -15,23 +15,20 @@
 
 <script setup lang="ts">
 import { defineComponent, h } from 'vue'
-import { useLoadingBar, useDialog, useMessage, useNotification } from 'naive-ui'
+import { useLoadingBar, useDialog, useMessage, useNotification, darkTheme } from 'naive-ui'
+import { useThemeStore } from '~/src/store'
+import { BuiltInGlobalTheme } from 'naive-ui/es/themes/interface';
+
+const themStore = useThemeStore()
+const themeMode = ref<BuiltInGlobalTheme | undefined>(undefined)
 
 const themeOverrides: Object = {
   common: {
-    primaryColor: '#316C72FF',
-    primaryColorHover: '#316C72E3',
+    primaryColor: '#2376b7FF',
+    primaryColorHover: '#2376b7E3',
     primaryColorPressed: '#2B4C59FF',
-    primaryColorSuppl: '#316C7263',
+    primaryColorSuppl: '#2376b763',
   },
-}
-
-// 挂载naive组件的方法至window, 以便在全局使用
-function setupNaiveTools() {
-  window.$loadingBar = useLoadingBar()
-  window.$dialog = useDialog()
-  window.$message = useMessage()
-  window.$notification = useNotification()
 }
 
 const NaiveProviderContent = defineComponent({
@@ -42,4 +39,30 @@ const NaiveProviderContent = defineComponent({
     return h('div')
   },
 })
+
+// 挂载naive组件的方法至window, 以便在全局使用
+function setupNaiveTools() {
+  window.$loadingBar = useLoadingBar()
+  window.$dialog = useDialog()
+  window.$message = useMessage()
+  window.$notification = useNotification()
+}
+
+watch(
+  () => themStore.darkMode,
+  (newValue) => {
+    if (newValue) {
+      document.documentElement.classList.add('dark')
+      themeMode.value = darkTheme
+    }
+    else {
+      document.documentElement.classList.remove('dark')
+      themeMode.value = undefined
+    }
+  },
+  {
+    immediate: true,
+  },
+)
+
 </script>
