@@ -2,8 +2,8 @@
     <div class="main-app">
         <EditorTools :has-selected-code="hasSelectedCode" @copy-code="copyCode" @format-code="formatCode"
             @switch-theme="switchTheme" />
-        <MonacoEditor ref="monacoEdit" :value="editorStore.value" :readonly="false" language="sql"
-            @content-change="editorContentChange" @selection-change="editorSelectionChange" />
+        <MonacoEditor ref="monacoEdit" :readonly="false" language="sql" @content-change="editorContentChange"
+            @selection-change="editorSelectionChange" />
     </div>
 </template>
 <script setup lang="ts">

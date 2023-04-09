@@ -42,8 +42,8 @@ const editorStore = useEditorStore()
 const editorContainer = ref<any>(null)
 
 let selectedCode: string = ''
-let editor: monaco.editor.IStandaloneCodeEditor | undefined = undefined
-const { initEditor, registerHoverProvider } = useMonacoEditor(editor)
+let editor: monaco.editor.IStandaloneCodeEditor
+const { initEditor, registerHoverProvider, registerCompletion } = useMonacoEditor()
 
 // 复制
 function copyCode() {
@@ -93,11 +93,14 @@ defineExpose({
 // 初始化
 onMounted(() => {
     registerHoverProvider(props.language)
-    initEditor(editorContainer, props.value, props.language, props.readonly, editorStore.theme)
+    registerCompletion()
+    if (!editor) {
+        editor = initEditor(editorContainer, editorStore.value, props.language, props.readonly, editorStore.theme)
+    }
     // 内容改变时给父组件实时返回值
     editor?.onDidChangeModelContent(() => {
-        if (editor)
-            emit('content-change', toRaw(editor).getValue())
+        const editorContent: string = toRaw(editor).getValue()
+        emit('content-change', editorContent)
     })
     // 选中代码改变时给父组件实时返回值
     editor?.onDidChangeCursorSelection(useDebounceFn((event: any) => {
@@ -108,12 +111,6 @@ onMounted(() => {
             emit('selection-change', selectedCode)
         }
     }, 400))
-})
-
-// 监听父组件传入参数的变化，重新赋值给编辑器
-watchEffect(() => {
-    if (editor)
-        toRaw(editor).setValue(props.value)
 })
 
 // 监听页面主题变化
