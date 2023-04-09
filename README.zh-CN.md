@@ -1,23 +1,22 @@
 <p align="center">
-  <a href="https://github.com/zclzone/qs-admin">
-    <img alt="Vue Naive Admin Logo" width="200" src="https://assets.qszone.com/images/logo_qs.svg">
+  <a href="https://github.com/RQD-china/naive-admin">
+    <img alt="Vue Naive Admin Logo" width="200" src="https://s1.ax1x.com/2023/04/09/ppbPmge.png">
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/zclzone/qs-admin/actions"><img allt="checks" src="https://badgen.net/github/checks/zclzone/qs-admin"/></a>
-  <a href="https://github.com/zclzone/qs-admin"><img allt="stars" src="https://badgen.net/github/stars/zclzone/qs-admin"/></a>
-  <a href="https://github.com/zclzone/qs-admin"><img allt="forks" src="https://badgen.net/github/forks/zclzone/qs-admin"/></a>
-  <a href="./LICENSE"><img allt="MIT License" src="https://badgen.net/github/license/zclzone/qs-admin"/></a>
+  <a href="https://github.com/RQD-china/naive-admin"><img allt="stars" src="https://badgen.net/github/stars/RQD-china/naive-admin"/></a>
+  <a href="https://github.com/RQD-china/naive-admin"><img allt="forks" src="https://badgen.net/github/forks/RQD-china/naive-admin"/></a>
+  <a href="./LICENSE"><img allt="MIT License" src="https://badgen.net/github/license/RQD-china/naive-admin"/></a>
 </p>
 
 <p align='center'>
-  <b>简体中文</b> | 
-  <a href="https://github.com/zclzone/qs-admin">English</a>
+  <b>English</b> | 
+  <a href="https://github.com/RQD-china/naive-admin/blob/main/README.zh-CN.md">简体中文</a>
 </p>
 
 ### 简介
 
-[Qs Admin](https://github.com/zclzone/qs-admin) 是一个开源的基于`Monaco Editor`组件的在线代码编辑器demo，基于最新的前端技术栈，如`Vue3、Vite3、TypeScript、Pinia、Unocss和Naive UI`。具备包括复制代码、复制选中代码、不同风格的代码格式化、切换主题等功能。
+[Naive Editor](https://github.com/RQD-china/naive-admin)是一个开源的基于`Monaco Editor`组件的在线代码编辑器demo，基于最新的前端技术栈，如`Vue3、Vite3、TypeScript、Pinia、Unocss和Naive UI`。具备包括复制代码、复制选中代码、不同风格的代码格式化、切换主题等功能。
 
 ### 功能
 
