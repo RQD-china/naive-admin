@@ -107,7 +107,7 @@ function handleClickSwitchThemeBtn() {
 
 // 点击使用说明
 function handleClickHelpBtn() {
-    window.open('https://github.com/RQD-china/naive-admin/blob/develop/README.md')
+    window.open('https://github.com/RQD-china/naive-editor/blob/develop/README.md')
 }
 </script>
 
