@@ -7,7 +7,8 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue .",
-    "lint:fix": "eslint --fix --ext .js,.vue ."
+    "lint:fix": "eslint --fix --ext .js,.vue .",
+    "build:github": "vite build --mode github"
   },
   "dependencies": {
     "@vueuse/core": "^9.13.0",
