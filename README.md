@@ -1,18 +1,59 @@
-# Vue 3 + TypeScript + Vite
+<p align="center">
+  <a href="https://github.com/RQD-china/naive-admin">
+    <img alt="Vue Naive Admin Logo" width="200" src="https://s1.ax1x.com/2023/04/09/ppbPmge.png">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/RQD-china/naive-admin/actions"><img allt="checks" src="https://badgen.net/github/checks/RQD-china/naive-admin"/></a>
+  <a href="https://github.com/RQD-china/naive-admin"><img allt="stars" src="https://badgen.net/github/stars/RQD-china/naive-admin"/></a>
+  <a href="https://github.com/RQD-china/naive-admin"><img allt="forks" src="https://badgen.net/github/forks/RQD-china/naive-admin"/></a>
+  <a href="./LICENSE"><img allt="MIT License" src="https://badgen.net/github/license/RQD-china/naive-admin"/></a>
+</p>
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<p align='center'>
+  <b>English</b> | 
+  <a href="https://github.com/RQD-china/naive-admin/blob/main/README.zh-CN.md">简体中文</a>
+</p>
 
-## Recommended IDE Setup
+### Introduction
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[Naive Editor](https://github.com/RQD-china/naive-admin) is an open source online code editor demo based on the `Monaco Editor` component, based on the latest front-end technology stack, such as `Vue3, Vite3, TypeScript, Pinia, Unocss and Naive UI`. Features include copying code, copying selected code, formatting code in different styles, switching themes and more.
 
-## Type Support For `.vue` Imports in TS
+### Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- 🍒 Integrated [Naive UI](https://www.naiveui.com)，recommended by Evan You.
+- 🍎 Integrated `eslint + prettier`.
+- 🍍 Integrated `pinia`，lightweight, simple and easy to use alternative to vuex.
+- 📦 Integrated `unplugin` auto import.
+- 🤹 Integrated `iconify` icon.
+- 🍇 Integrated `unocss`.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### Preview
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+[https://rqd-china.github.io/naive-admin/](https://rqd-china.github.io/naive-admin/)
+
+
+### Getting Started
+
+```shell
+# Recommended setup git autocrlf 为 false
+git config --global core.autocrlf false
+
+# Clone Project
+git clone https://github.com/RQD-china/naive-admin.git
+
+cd qs-admin
+
+# Install dependencies(Recommended use pnpm: https://pnpm.io/zh/installation)
+npm i -g pnpm # Installed and can be ignored
+pnpm i # or npm i
+
+# Start
+pnpm dev
+```
+
+### Config
+
+Mouse hover hint configuration：[useMonacoEditor.ts:34](https://github.com/RQD-china/naive-admin/tree/main/src/hooks/useMonacoEditor.ts)
+
+Database/Table Name Prompt Word Configuration：[suggestionKeyword.ts:1](https://github.com/RQD-china/naive-admin/tree/main/src/constant/suggestionKeyword.ts)
