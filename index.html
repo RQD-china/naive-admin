@@ -1,13 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
-</html>
+<!doctype html><html lang="en"><head><script>self["MonacoEnvironment"] = (function (paths) {
+          return {
+            globalAPI: false,
+            getWorkerUrl : function (moduleId, label) {
+              var result =  paths[label];
+              if (/^((http:)|(https:)|(file:)|(\/\/))/.test(result)) {
+                var currentUrl = String(window.location);
+                var currentOrigin = currentUrl.substr(0, currentUrl.length - window.location.hash.length - window.location.search.length - window.location.pathname.length);
+                if (result.substring(0, currentOrigin.length) !== currentOrigin) {
+                  var js = '/*' + label + '*/importScripts("' + result + '");';
+                  var blob = new Blob([js], { type: 'application/javascript' });
+                  return URL.createObjectURL(blob);
+                }
+              }
+              return result;
+            }
+          };
+        })({
+  "editorWorkerService": "/monacoeditorwork/editor.worker.bundle.js",
+  "css": "/monacoeditorwork/css.worker.bundle.js",
+  "html": "/monacoeditorwork/html.worker.bundle.js",
+  "json": "/monacoeditorwork/json.worker.bundle.js",
+  "typescript": "/monacoeditorwork/ts.worker.bundle.js",
+  "javascript": "/monacoeditorwork/ts.worker.bundle.js",
+  "less": "/monacoeditorwork/css.worker.bundle.js",
+  "scss": "/monacoeditorwork/css.worker.bundle.js",
+  "handlebars": "/monacoeditorwork/html.worker.bundle.js",
+  "razor": "/monacoeditorwork/html.worker.bundle.js"
+});</script><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="icon" href="/favicon.svg"/><link rel="stylesheet" href="/loading/index.css"/><title>Naive Editor</title><script type="module" crossorigin src="/assets/index-e0a13ee5.js"></script><link rel="stylesheet" href="/assets/index-d9b947b0.css"></head><body dark:text-white dark:bg-hex-121212><div id="app"><div class="loading-container"><div id="loadingLogo" class="loading-svg"></div><div class="loading-spin__container"><div class="loading-spin"><div class="left-0 top-0 loading-spin-item"></div><div class="left-0 bottom-0 loading-spin-item loading-delay-500"></div><div class="right-0 top-0 loading-spin-item loading-delay-1000"></div><div class="right-0 bottom-0 loading-spin-item loading-delay-1500"></div></div></div><div class="loading-title">Naive Editor</div></div><script src="/loading/index.js"></script></div></body></html>
